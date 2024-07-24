@@ -5,24 +5,36 @@ import useTheme from '../hooks/useTheme';
 import ButtonTheme from './ButtonTheme';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useWindowScroll } from 'react-use';
 
 export function Navigator({ menuItems }: { menuItems: string[] }) {
   const { theme } = useTheme();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [select, setSelect] = useState('');
+  const { y: pageYOffset } = useWindowScroll();
+  const [showHeader, setShowHeader] = useState(false);
 
   useEffect(() => {
     const path = location.pathname === '/' ? menuItems[0].toLowerCase() : location.pathname.slice(1).toLowerCase();
     setSelect(path);
   }, [location, menuItems]);
 
+  useEffect(() => {
+    if(pageYOffset > 10) {
+      setShowHeader(true);
+    } else {
+      setShowHeader(false);
+    }
+
+  }, [pageYOffset]);
+
   return (
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       className='bg-transparent'
-      isBlurred={false}
+      isBlurred={showHeader}
     >
       <NavbarMenuToggle className='sm:hidden' aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
       <NavbarBrand>

@@ -6,7 +6,7 @@ import Layout from './pages/Layout'
 import Home from './pages/Home'
 import Experience from './pages/Experience'
 
-const menuItems = ['About', 'Experience', 'Projects', 'Contact']
+const menuItems = ['Home', 'About', 'Experience', 'Projects', 'Contact']
 
 const router = createBrowserRouter([
 
@@ -16,6 +16,10 @@ const router = createBrowserRouter([
     children: [{
       path: "/",
       element: <Home />
+    },
+    {
+      path: "/about",
+      element: <div>About</div>
     },
     {
       path: "/experience",
