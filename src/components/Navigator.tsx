@@ -1,24 +1,32 @@
-import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from '@nextui-org/react'
+import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from '@nextui-org/react'
 import logoLight from '../assets/logo-light.svg'
 import logoDark from '../assets/logo-dark.svg'
 import useTheme from '../hooks/useTheme';
 import ButtonTheme from './ButtonTheme';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export function Navigator({ menuItems }: { menuItems: string[] }) {
   const { theme } = useTheme();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [select, setSlect] = useState(menuItems[0].toLowerCase());
+  const [select, setSelect] = useState('');
 
+  useEffect(() => {
+    const path = location.pathname === '/' ? menuItems[0].toLowerCase() : location.pathname.slice(1).toLowerCase();
+    setSelect(path);
+  }, [location, menuItems]);
 
   return (
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
+      className='bg-transparent'
+      isBlurred={false}
     >
       <NavbarMenuToggle className='sm:hidden' aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
       <NavbarBrand>
-        <Link href={`/`} color='foreground' onPress={() => setSlect('')}>
+        <Link to={`/`} color='foreground' onClick={() => setSelect('')} className='flex gap-1 justify-center items-center'>
           <img src={theme === 'light' ? logoLight : logoDark} width={40} height={40} alt="" />
           <p className="hidden sm:block font-bold text-inherit" >CÉSAR URIARTE</p>
         </Link>
@@ -27,11 +35,10 @@ export function Navigator({ menuItems }: { menuItems: string[] }) {
         {menuItems.map((item, index) => (
           <NavbarItem key={index}>
             <Link
-              color={select === item.toLowerCase() ? 'primary' : 'foreground'}
-              href={`#${item.toLowerCase()}`}
-              onPress={() => setSlect(item.toLowerCase())}
+              to={`/${item.toLowerCase() == menuItems[0].toLowerCase() ? '' : item.toLowerCase()}`}
+              onClick={() => setSelect(item.toLowerCase())}
             >
-              <p className={select === item.toLowerCase() ? 'font-bold' : ''}>{item}</p>
+              <p className={select === item.toLowerCase() ? 'font-bold text-primary' : ''}>{item}</p>
             </Link>
           </NavbarItem>
         ))}
@@ -48,12 +55,10 @@ export function Navigator({ menuItems }: { menuItems: string[] }) {
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               className="w-full flex justify-center"
-              color={select === item.toLowerCase() ? 'primary' : 'foreground'}
-              href={`/#${item.toLowerCase()}`}
-              onPress={() => setSlect(item.toLowerCase())}
-              size="md"
+              to={`/${item.toLowerCase() == menuItems[0].toLowerCase() ? '' : item.toLowerCase()}`}
+              onClick={() => { setSelect(item.toLowerCase()); setIsMenuOpen(false); }}
             >
-              {item}
+              <p className={select === item.toLowerCase() ? 'font-bold text-primary' : ''}>{item}</p>
             </Link>
           </NavbarMenuItem>
         ))}

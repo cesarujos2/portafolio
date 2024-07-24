@@ -1,18 +1,42 @@
 import { NextUIProvider } from '@nextui-org/react'
 import './App.css'
-import { Navigator } from './components/Navigator'
 import { ThemeProvider } from './context/ThemeContext'
-import ContentWork from './components/ContentWork'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Layout from './pages/Layout'
+import Home from './pages/Home'
+import Experience from './pages/Experience'
+
+const menuItems = ['About', 'Experience', 'Projects', 'Contact']
+
+const router = createBrowserRouter([
+
+  {
+    path: "/",
+    element: <Layout menuItems={menuItems} />,
+    children: [{
+      path: "/",
+      element: <Home />
+    },
+    {
+      path: "/experience",
+      element: <Experience />
+    },
+    {
+      path: "/projects",
+      element: <div>Resume</div>
+    },
+    {
+      path: "/contact",
+      element: <div>Work</div>
+    }],
+  },
+])
 
 function App() {
-  const menuItems = ['Home','About', 'Resume', 'Work']
   return (
     <NextUIProvider>
       <ThemeProvider>
-        <div className={`flex flex-col min-h-screen`}>
-          <Navigator menuItems={menuItems} />
-          <ContentWork></ContentWork>
-        </div>
+        <RouterProvider router={router} ></RouterProvider>
       </ThemeProvider>
     </NextUIProvider>
   )

@@ -14,15 +14,18 @@ export default {
         colors: {
           background: "#F7F9F9",
           primary: {
-            DEFAULT: "#FFC300",
+            DEFAULT: "#F0BB07",
             foreground: "#000814",
           },
           focus: "#000814",
+          secondary: {
+            DEFAULT: "#003566",
+            foreground: "#F0BB07",
+          }
         }
       },
       dark: {
         colors: {
-          background: "#000814",
           primary: {
             DEFAULT: "#ffc300",
             foreground: "#000814",
