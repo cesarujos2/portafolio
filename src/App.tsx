@@ -3,13 +3,11 @@ import './App.css'
 import { ThemeProvider } from './context/ThemeContext'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './pages/Layout'
-import Home from './pages/Home'
-import Experience from './pages/Experience'
-import About from './pages/About'
+import Home from './pages/Home/Home'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 
-const menuItems = ['Home', 'About', 'Experience', 'Projects']
+const menuItems = ['Home', 'Projects']
 
 const router = createBrowserRouter([
 
@@ -19,14 +17,6 @@ const router = createBrowserRouter([
     children: [{
       path: "/",
       element: <Home />
-    },
-    {
-      path: "/about",
-      element: <About/>
-    },
-    {
-      path: "/experience",
-      element: <Experience />
     },
     {
       path: "/projects",
