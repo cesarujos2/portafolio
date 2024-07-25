@@ -16,8 +16,8 @@ function IamSection({ className }: {className?: string }) {
         <div className={`flex justify-center items-center flex-wrap ${className}`}>
             <div className="basis-full lg:basis-1/2 flex flex-col gap-6 px-6 md:pl-16 md:pr-6 lg:pl-28 py-10">
                 <div>
-                    <h1 className="w-full text-5xl font-bold font-sans dark:text-primary">I'm César Uriarte</h1>
-                    <h2 className={`text-xl`}>
+                    <h1 className="w-full text-4xl font-bold font-sans dark:text-primary">I'm César Uriarte</h1>
+                    <h2 className={`text-xl/2`}>
                         <ReactTyped
                             strings={jobs}
                             typeSpeed={30}
@@ -28,7 +28,7 @@ function IamSection({ className }: {className?: string }) {
                         />
                     </h2>
                 </div>
-                <p className="text-md">Hi there! I’m an environmental engineer and software developer with a passion for technology and web development. My portfolio website is a window into my professional world, where I share my projects, completed work, and industry experience. Here, you can learn more about my skills, standout projects, and how to get in touch with me.</p>
+                <p className="text-sm">Hi there! I’m an environmental engineer and software developer with a passion for technology and web development. My portfolio website is a window into my professional world, where I share my projects, completed work, and industry experience. Here, you can learn more about my skills, standout projects, and how to get in touch with me.</p>
                 <div className="flex gap-4">
                     <IconSocial href="https://www.linkedin.com/in/uriarte-cesar" src={linkedinIcon} alt="Linkedin Icon" color="#0A66C2" />
                     <IconSocial href="https://www.facebook.com/chesar.uch" src={facebookIcon} alt="Facebook Icon" color="#0866FF" />
@@ -46,7 +46,7 @@ function IamSection({ className }: {className?: string }) {
                 </div>
             </div>
             <div className="basis-full md:basis-1/2">
-                <img style={{ margin: '0 auto', width: '80%', maxWidth: '600px' }} src={portrait} alt="Foto" />
+                <img style={{ margin: '0 auto', width: '80%', maxWidth: '600px', maskImage: 'linear-gradient(black 50%, transparent),', transform: 'scaleX(-1)' }} src={portrait} alt="Foto" />
             </div>
         </div>
     )
