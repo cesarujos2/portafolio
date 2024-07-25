@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div>About</div>
+    <div className="min-h-[calc(100vh-64px)]">About</div>
   )
 }
 

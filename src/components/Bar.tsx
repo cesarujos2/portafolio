@@ -24,7 +24,7 @@ function Bar({ sectionsId, className }: { sectionsId: string[], className?: stri
         {sectionsId.map((section, index) => (
           <Link key={index} to={section} smooth={true} offset={-64} duration={800}>
             <div className="cursor-pointer flex gap-4 items-center">
-              <div className={ "transition-all " + (section !== selected ? "text-gray-500 hover:text-white" : "")}>{section}</div>
+              <div className={ "transition-all " + (section !== selected ? "text-gray-700 dark:text-gray-500 hover:text-black dark:hover:text-white" : "font-bold")}>{section}</div>
               <div className={"w-3 h-3 bg-primary rounded-full " + (section === selected ? "animate-pulse" : "hidden")}></div>
             </div>
           </Link>

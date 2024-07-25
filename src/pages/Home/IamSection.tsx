@@ -4,19 +4,29 @@ import IconSocial from "../../components/IconSocial"
 import linkedinIcon from "../../assets/icon/nav-icon1.svg"
 import facebookIcon from "../../assets/icon/nav-icon2.svg"
 import instagramIcon from "../../assets/icon/nav-icon3.svg"
+import { ReactTyped } from "react-typed"
 
 const jobs = [
     "Enviromental Engineer",
     "Full Stack Developer",
 ]
 
-function IamSection({minHeight, className} : {minHeight?: string, className?: string}) {
+function IamSection({ className }: {className?: string }) {
     return (
-        <div className={`flex justify-center items-center flex-wrap ${className}`} style={{ minHeight: minHeight ? minHeight : 'calc(100vh - 64px)' }}>
+        <div className={`flex justify-center items-center flex-wrap ${className}`}>
             <div className="basis-full lg:basis-1/2 flex flex-col gap-6 px-6 md:pl-16 md:pr-6 lg:pl-28 py-10">
                 <div>
                     <h1 className="w-full text-5xl font-bold font-sans dark:text-primary">I'm César Uriarte</h1>
-                    <h2 className={`text-xl`}>{jobs.join(' | ')}</h2>
+                    <h2 className={`text-xl`}>
+                        <ReactTyped
+                            strings={jobs}
+                            typeSpeed={30}
+                            loop
+                            backSpeed={30}
+                            cursorChar="_"
+                            showCursor
+                        />
+                    </h2>
                 </div>
                 <p className="text-md">Hi there! I’m an environmental engineer and software developer with a passion for technology and web development. My portfolio website is a window into my professional world, where I share my projects, completed work, and industry experience. Here, you can learn more about my skills, standout projects, and how to get in touch with me.</p>
                 <div className="flex gap-4">

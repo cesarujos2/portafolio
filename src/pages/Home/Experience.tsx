@@ -1,6 +1,6 @@
 const Experience = () => {
   return (
-    <div>Experience</div>
+    <div className="min-h-[calc(100vh-128px)]">Experience</div>
   )
 }
 
