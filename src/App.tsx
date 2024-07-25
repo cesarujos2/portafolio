@@ -5,8 +5,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './pages/Layout'
 import Home from './pages/Home'
 import Experience from './pages/Experience'
+import About from './pages/About'
+import Projects from './pages/Projects'
+import Contact from './pages/Contact'
 
-const menuItems = ['Home', 'About', 'Experience', 'Projects', 'Contact']
+const menuItems = ['Home', 'About', 'Experience', 'Projects']
 
 const router = createBrowserRouter([
 
@@ -19,7 +22,7 @@ const router = createBrowserRouter([
     },
     {
       path: "/about",
-      element: <div>About</div>
+      element: <About/>
     },
     {
       path: "/experience",
@@ -27,11 +30,11 @@ const router = createBrowserRouter([
     },
     {
       path: "/projects",
-      element: <div>Resume</div>
+      element: <Projects />
     },
     {
       path: "/contact",
-      element: <div>Work</div>
+      element: <Contact />
     }],
   },
 ])

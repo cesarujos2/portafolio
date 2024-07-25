@@ -1,7 +1,7 @@
-function Work() {
+function Projects() {
   return (
-    <div>Work</div>
+    <div>Projects</div>
   )
 }
 
-export default Work
+export default Projects

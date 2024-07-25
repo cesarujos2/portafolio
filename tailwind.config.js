@@ -15,7 +15,7 @@ export default {
           background: "#F7F9F9",
           primary: {
             DEFAULT: "#F0BB07",
-            foreground: "#000814",
+            foreground: "#232529",
           },
           focus: "#000814",
           secondary: {

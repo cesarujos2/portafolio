@@ -19,7 +19,13 @@ body {
 }
 
 .galaxy-background {
-    background: radial-gradient(circle, #000000, #070c23, #1b0128);
+    background: radial-gradient(circle, #000000, #05151c, #051900);
+    background-size: 200% 200%;
+    animation: galaxyAnimation 15s infinite;
+}
+
+.white-background {
+    background: radial-gradient(circle, #ffffff, #f5f6e5, #def2d6);
     background-size: 200% 200%;
     animation: galaxyAnimation 15s infinite;
 }

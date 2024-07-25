@@ -1,4 +1,4 @@
-import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from '@nextui-org/react'
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from '@nextui-org/react'
 import logoLight from '../assets/logo-light.svg'
 import logoDark from '../assets/logo-dark.svg'
 import useTheme from '../hooks/useTheme';
@@ -21,7 +21,7 @@ export function Navigator({ menuItems }: { menuItems: string[] }) {
   }, [location, menuItems]);
 
   useEffect(() => {
-    if(pageYOffset > 10) {
+    if (pageYOffset > 10) {
       setShowHeader(true);
     } else {
       setShowHeader(false);
@@ -40,7 +40,7 @@ export function Navigator({ menuItems }: { menuItems: string[] }) {
       <NavbarBrand>
         <Link to={`/`} color='foreground' onClick={() => setSelect('')} className='flex gap-1 justify-center items-center'>
           <img src={theme === 'light' ? logoLight : logoDark} width={40} height={40} alt="" />
-          <p className="hidden sm:block font-bold text-inherit" >CÉSAR URIARTE</p>
+          <p className="hidden md:block font-bold text-inherit" >CÉSAR URIARTE</p>
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-6" justify="center">
@@ -58,7 +58,9 @@ export function Navigator({ menuItems }: { menuItems: string[] }) {
       <NavbarContent justify='end'>
         <ButtonTheme />
         <NavbarItem>
-          <Button color='primary' ><strong>Let's Connect</strong></Button>
+          <Link to={"/contact"}>
+            <div className='px-4 py-2 rounded-lg bg-primary text-black'><strong>Let's Connect</strong></div>
+          </Link>
         </NavbarItem>
       </NavbarContent>
 
