@@ -59,7 +59,7 @@ export function Navigator({ menuItems }: { menuItems: string[] }) {
         <ButtonTheme />
         <NavbarItem>
           <Link to={"/contact"}>
-            <div className='px-4 py-2 rounded-lg bg-primary text-black'><strong>Let's Connect</strong></div>
+            <div className='px-4 py-2 rounded-xl bg-primary text-2sm font-sans text-white dark:text-black dark:font-semibold'>Let's Connect</div>
           </Link>
         </NavbarItem>
       </NavbarContent>

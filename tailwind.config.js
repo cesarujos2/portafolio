@@ -12,14 +12,14 @@ export default {
     themes: {
       light:{
         colors: {
-          background: "#F7F9F9",
+          background: "#a8dadc",
           primary: {
-            DEFAULT: "#F0BB07",
+            DEFAULT: "#264653",
             foreground: "#232529",
           },
           focus: "#000814",
           secondary: {
-            DEFAULT: "#003566",
+            DEFAULT: "#ff7514",
             foreground: "#F0BB07",
           }
         }
@@ -27,10 +27,14 @@ export default {
       dark: {
         colors: {
           primary: {
-            DEFAULT: "#ffc300",
+            DEFAULT: "#2a9d8f",
             foreground: "#000814",
           },
           focus: "#ffc300",
+          secondary: {
+            DEFAULT: "#ff7514",
+            foreground: "#000814",
+          }
         },
       },
     }

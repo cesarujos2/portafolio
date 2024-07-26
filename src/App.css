@@ -18,14 +18,40 @@ body {
     }
 }
 
+@keyframes card {
+    0% {
+        background-size: 400% 400%;
+        background-position: 0% 0%;
+    }
+    50% {
+        background-size: 800% 800%;
+        background-position: 100% 100%;
+    }
+    100% {
+        background-size: 400% 400%;
+        background-position: 0% 0%;
+    }
+}
+
 .galaxy-background {
-    background: radial-gradient(circle, #000000, #05151c, #051900);
+    background: radial-gradient(circle, #000000, #05151c, #264653);
     background-size: 200% 200%;
     animation: galaxyAnimation 15s infinite;
 }
 
+.galaxy-card-dark {
+    background: radial-gradient(circle, #000000, #0e1d24);
+    animation: card 15s infinite;
+}
+
+.galaxy-card-light {
+    background: radial-gradient(circle, #ffffff, #ffffff);
+    background-size: 200% 200%;
+    animation: card 15s infinite;
+}
+
 .white-background {
-    background: radial-gradient(circle, #ffffff, #f5f6e5, #def2d6);
+    background: radial-gradient(circle, #ffffff, #ffffff, #fbfeff);
     background-size: 200% 200%;
     animation: galaxyAnimation 15s infinite;
 }
