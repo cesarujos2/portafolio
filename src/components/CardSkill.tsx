@@ -2,6 +2,7 @@ import { Card, CardBody, CardHeader, Image } from "@nextui-org/react"
 import useTheme from "../hooks/useTheme";
 
 interface CardSkillProps {
+    id?: string
     imgSrc: string
     title: string
     children: string
@@ -9,10 +10,10 @@ interface CardSkillProps {
     invertColor?: boolean
 }
 
-function CardSkill({ imgSrc, title, children, clasName, invertColor = false }: CardSkillProps) {
+function CardSkill({ id, imgSrc, title, children, clasName, invertColor = false }: CardSkillProps) {
     const { theme } = useTheme();
     return (
-        <Card className={"h-full galaxy-card-" + theme + " " + clasName}>
+        <Card id={id} className={"h-full galaxy-card-" + theme + " " + clasName} isPressable>
             <CardHeader className="flex gap-3">
                 <Image
                     alt={title}

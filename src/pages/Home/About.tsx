@@ -9,6 +9,9 @@ import iconMongoDB from '../../assets/icon/mongoDB.svg'
 import iconNextjs from '../../assets/icon/nextjs.svg'
 import iconNet from '../../assets/icon/net.svg'
 import useTheme from "../../hooks/useTheme"
+import iconQgis from '../../assets/icon/qgis.svg'
+import iconAutodesk from '../../assets/icon/autodesk.svg'
+import iconModeling from '../../assets/icon/modeling.svg'
 
 function About() {
   const { theme } = useTheme();
@@ -27,12 +30,12 @@ function About() {
       </Fade>
       <section id="SkillsDev">
         <Fade direction="up" triggerOnce delay={50}>
-          <h1 className="text-xl font-bold font-sans dark:text-gray-400 mt-1">Full stack developer</h1>
+          <h1 className="text-xl font-bold font-sans dark:text-gray-400 mt-6">Full stack developer</h1>
         </Fade>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 mt-3 justify-center">
           <Fade direction="up" triggerOnce cascade damping={0.1} delay={50}>
             <CardSkill imgSrc={iconTypescript} title="Typescript">
-              Knowledge knowledge in TypeScript for scalable and maintainable code.
+              Skilled in TypeScript for scalable and maintainable code.
             </CardSkill>
             <CardSkill imgSrc={iconTailwind} title="Tailwind CSS">
               Knowledge in using Tailwind CSS for rapid UI development.
@@ -62,6 +65,22 @@ function About() {
         <Fade className="mt-4" delay={200} direction="up" triggerOnce>
           <h1 className="text-xl font-bold font-sans dark:text-gray-300">Enviromental engineer</h1>
         </Fade>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 mt-6 justify-center">
+          <Fade direction="up" triggerOnce cascade damping={0.1} delay={50}>
+            <CardSkill imgSrc={iconQgis} title="QGIS" invertColor={theme === "dark"}>
+              Skilled in TypeScript for scalable and maintainable code.
+            </CardSkill>
+            <CardSkill imgSrc={'https://icons.iconarchive.com/icons/simpleicons-team/simple/512/esri-icon.png'} title="ArcGIS" invertColor={theme === "dark"}>
+              Skilled in using ArcGIS for advanced geospatial analysis and environmental reporting, handling large datasets and performing detailed spatial analysis.
+            </CardSkill>
+            <CardSkill imgSrc={iconAutodesk} title="Autodesk AutoCAD">
+              Experienced in using AutoCAD for creating technical drawings and environmental design plans, with expertise in drafting, modeling, and visualizing engineering and environmental projects.
+            </CardSkill>
+            <CardSkill id="CardModeling" imgSrc={iconModeling} title="Environmental Modeling">
+              Knowledgeable in environmental modeling techniques, including hydrological and hydraulic modeling, for assessing and predicting environmental impacts. Skilled in applying various tools and methodologies to address complex environmental challenges.
+            </CardSkill>
+          </Fade>
+        </div>
       </div>
     </div >
   )
