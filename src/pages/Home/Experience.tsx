@@ -1,6 +1,6 @@
-const Experience = () => {
+const Experience = ({ className }: { className?: string }) => {
   return (
-    <div className="min-h-[calc(100vh-128px)]">Experience</div>
+    <div className={`${className} `}>Experience</div>
   )
 }
 

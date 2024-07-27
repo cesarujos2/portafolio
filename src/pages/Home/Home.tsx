@@ -14,17 +14,17 @@ function Home() {
         <Fade delay={100}>
         <div id="Home">
           <div>
-            <IamSection className="min-h-[calc(100vh-64px)]" />
+            <IamSection className="lg:min-h-[calc(100vh-64px)] noMinHeight" />
           </div>
         </div>
         </Fade>
-        <div id="About">
+        <div id="About" className="lg:min-h-[calc(100vh-64px)] noMinHeight">
           <div>
             <About />
           </div>
         </div>
         <div id="Experience">
-          <Experience />
+          <Experience className="lg:min-h-[calc(100vh-128px)] noMinHeight"/>
         </div>
       </div>
       <Bar sectionsId={sections} className="h-[calc(100vh-100px)]" />

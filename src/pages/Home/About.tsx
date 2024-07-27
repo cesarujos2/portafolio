@@ -13,10 +13,10 @@ import iconQgis from '../../assets/icon/qgis.svg'
 import iconAutodesk from '../../assets/icon/autodesk.svg'
 import iconModeling from '../../assets/icon/modeling.svg'
 
-function About() {
+function About({className} : {className?: string}) {
   const { theme } = useTheme();
   return (
-    <div className="min-h-[calc(100vh-64px)] flex flex-col px-6 md:px-16 lg:px-28 pt-6">
+    <div className={"flex flex-col px-6 md:px-16 lg:px-28 pt-6 " + className}>
       <Fade>
         <div>
           <h1 className="text-3xl font-bold font-sans dark:text-primary">About Me</h1>

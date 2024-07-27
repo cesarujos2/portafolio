@@ -55,3 +55,9 @@ body {
     background-size: 200% 200%;
     animation: galaxyAnimation 15s infinite;
 }
+
+@media (min-height: 768px) and (min-width: 1024px) {
+    .noMinHeight {
+        min-height: auto !important;
+    }
+}
